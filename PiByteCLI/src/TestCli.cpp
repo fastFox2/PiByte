@@ -3,5 +3,4 @@
 int main() {
 	PiByte::print();
 
-	return 0;
 }

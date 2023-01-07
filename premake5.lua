@@ -57,7 +57,7 @@ project "PiByteCLI"
 	language "C++"
 
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
-	targetdir ("bin-int/" .. outputDir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputDir .. "/%{prj.name}")
 
 	files 
 	{
@@ -73,6 +73,11 @@ project "PiByteCLI"
 	links 
 	{
 		"PiByte"
+	}
+
+	defines
+	{
+		"PB_PLATFORM_WINDOWS"
 	}
 
 
