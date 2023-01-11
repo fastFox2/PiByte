@@ -1,0 +1,3 @@
+[submodule "PiByte/vendor/spdlog"]
+	path = PiByte/vendor/spdlog
+	url = https://github.com/gabime/spdlog

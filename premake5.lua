@@ -4,6 +4,7 @@ workspace "PiByte"
 	architecture "x64"
 	configurations {"Debug", "Release"}
 	startproject "PiByteCLI"
+	--startproject "PiByte"
 
 outputDir = "%{cfg.architecture}-%{cfg.system}-%{cfg.buildcfg}"
 
@@ -23,13 +24,14 @@ project "PiByte"
 
 	includedirs
 	{
-		-- Future includes here
+		"%{prj.name}/vendor/spdlog/include"
 	}
 
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
+		runtime "Debug"
 		systemversion "latest"
 
 		defines
@@ -67,7 +69,8 @@ project "PiByteCLI"
 
 	includedirs
 	{
-		"PiByte/src/"
+		"PiByte/src/",
+		"PiByte/vendor/spdlog/include"
 	}
 
 	links 
@@ -83,7 +86,8 @@ project "PiByteCLI"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
+		runtime "Debug"
 		systemversion "latest"
 
 	filter "configurations:Debug"

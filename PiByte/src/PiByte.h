@@ -1,3 +1,4 @@
 #pragma once
 
-#include "PiByte/test.h"
+#include "PiByte/Log.h"
+#include "PiByte/Lexer.h"
